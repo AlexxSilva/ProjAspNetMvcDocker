@@ -1,0 +1,12 @@
+﻿@model ProjAspNetMvcDocker.Models.Produto
+
+<h1>Excluir Produto</h1>
+
+<div>
+    <h3>Tem certeza que deseja excluir o produto @Model.Codigo</h3>
+    <form method="post" asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <button asp-action="Delete" type="submit" class="btn btn-danger">Excluir</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

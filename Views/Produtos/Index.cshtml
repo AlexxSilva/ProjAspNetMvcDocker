@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjAspNetMvcDocker.Models.Produto> 
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<h1>Lista de Produtos</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Unidade</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Id</td>
+                <td>@produto.Codigo</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.Unidade</td>
+                <td>@produto.Preco</td>
+                <td>@produto.Categoria.Descricao</td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@produto.Id" class="btn btn-info">Detalhes</a>
+                    <a asp-action="Update" asp-route-id="@produto.Id" class="btn btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@produto.Id" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Adicionar Produto</a>

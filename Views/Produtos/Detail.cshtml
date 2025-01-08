@@ -1,0 +1,36 @@
+﻿@model ProjAspNetMvcDocker.Models.Produto
+
+<h2>Detalhes do Produto</h2>
+
+<div class="form-group">
+    <label>Id:</label>
+    <p>@Model.Id</p>
+</div>
+
+<div class="form-group">
+    <label>Código:</label>
+    <p>@Model.Codigo</p>
+</div>
+
+<div class="form-group">
+    <label>Descrição:</label>
+    <p>@Model.Descricao</p>
+</div>
+
+<div class="form-group">
+    <label>Unidade:</label>
+    <p>@Model.Unidade</p>
+</div>
+
+<div class="form-group">
+    <label>Preço:</label>
+    <p>@Model.Preco</p>
+</div>
+
+<div class="form-group">
+    <label>Categoria:</label>
+    <p>@Model.Categoria.Descricao</p>
+</div>
+
+
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

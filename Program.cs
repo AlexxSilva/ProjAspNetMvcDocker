@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjAspNetMvcDocker.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("http://*:80");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

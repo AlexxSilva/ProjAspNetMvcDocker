@@ -1,0 +1,33 @@
+﻿services:
+  sqlserverdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserverdb
+    build:
+      context: .  
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "123mudar@@"
+    ports:
+      - "1450:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+  mvcapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mvcapp
+    environment:
+      DbServer: "sqlserverdb"
+      DbPort: "1433"
+      DbUser: "sa"
+      Password: "123mudar@@"
+      Database: "AptDb"
+    depends_on:
+      - sqlserverdb
+    ports:
+      - "5005:80"
+ 
+volumes:
+  sqlserver_data:  
+
+  

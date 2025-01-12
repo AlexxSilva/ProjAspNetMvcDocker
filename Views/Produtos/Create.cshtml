@@ -9,7 +9,7 @@
 <form asp-action="Create" method="post">
     <div class="form-group">
         <label asp-for="Codigo"></label>
-        <input asp-for="Codigo" class="form-control" />
+        <input asp-for="Codigo" maxlength="10" class="form-control" />
         <span asp-validation-for="Codigo" class="text-danger"></span>
     </div>
 
@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label asp-for="Unidade"></label>
-        <input asp-for="Unidade" class="form-control" />
+        <input asp-for="Unidade" maxlength="2" class="form-control" />
         <span asp-validation-for="Unidade" class="text-danger"></span>
     </div>
 
